@@ -1,23 +1,27 @@
 
 let RustGallery;
 
-$.getJSON("SeptemberSession.json", function(json) {
-    console.log(json);
-    RustGallery = json["Images"]
-    RandImg()
-});
+// RustGallery = temp["Images"]
 
 $(document).ready(() => {
-    
+    $.getJSON("SeptemberSession.json", function(json) {
+        RustGallery = json["Images"]
+        RandImg()
+    });
+    // RandImg()
 });
 
 function RandImg(){
     var randNum = Math.floor(Math.random() * RustGallery.length)
 
-    $('#imgCanvas').attr('src', RustGallery[randNum]["paintingPath"])
+    $('#imgCanvas').attr('src', RustGallery[randNum]["canvasPath"])
+    $('#imgCanvas').attr('style', 'height: 80vh;')
+
     $('#imgPainting').attr('src', RustGallery[randNum]["paintingPath"])
+    $('#imgPainting').attr('style', `height: 70vh;`)
+
 
     setTimeout(function(){
         RandImg()
-    }, 1000);
+    }, 15000);
 }

@@ -1,3 +1,18 @@
 body{
     background-color: #282620;
 }
+
+.container{
+    display: grid;
+    place-items: center;
+    height: 100%;
+    border: 3px solid green;
+}
+
+img{
+    position: absolute;
+}
+
+#imgCanvas2{
+    opacity: 0.23;
+}
