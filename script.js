@@ -3,7 +3,7 @@ let RustGallery;
 
 $.getJSON("SeptemberSession.json", function(json) {
     console.log(json);
-    RustGallery = json
+    RustGallery = json["Images"]
     RandImg()
 });
 
